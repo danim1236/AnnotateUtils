@@ -93,7 +93,7 @@ def organize_files(directory_path, phase, name, size, camera, version):
     print("Movendo e renomeando arquivos de validação...")
     with tqdm(total=len(val_images), desc="Validação") as pbar:
         for i, (image, annotation) in enumerate(zip(val_images, val_labels)):
-            new_name = f"V_F{phase}_{name}_{size}_CAM{camera}_V{version}_{i + 1:05d}"
+            new_name = f"V_F{phase}_{name}.{size}_CAM{camera}.V{version}_{i + 1:05d}"
             image_extension = os.path.splitext(image)[1]
             new_image_name = new_name + image_extension
             new_annotation_name = new_name + '.txt'
